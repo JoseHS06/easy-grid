@@ -1,0 +1,1181 @@
+/*
+* @author 👽 José Armando Hernández Salamanca  <😸Github JoseHS06>
+* 🧩 EASY GRID << e-grid >>
+* Sistema de maquetación para sitios web basados en FLEXBOX;
+* v.1.0
+*  
+*/
+
+@charset "UTF-8";
+
+/* ⚙️ CONFIGURACION ROOT */
+
+:root {
+  --primary-color: #74b9ff;
+  --light-color: #d1d8e0;
+  --dark-color: #222f3e;
+  --text-primary: #222f3e;
+  --text-light: #ffffff;
+  --container-desktop: 1200px;
+  --container-laptop: 960px;
+  --container-tablet: 720px;
+  --container-mobile: 540px;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTENEDORES */
+
+.container,
+.container-fluid {
+  width: 100%;
+  margin: auto;
+  padding: 0 5px;
+}
+
+.container::after,
+.container-fluid::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 🧱 Media queries para los contenedores en los diferentes dispositivos  */
+
+@media (min-width: 576px) {
+  .container {
+    max-width: var(--container-mobile);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--container-tablet);
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: var(--container-laptop);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: var(--container-desktop);
+  }
+}
+
+/* 📐 Media queries para 👀 mostrar / ocultar elementos en los distintos dispositivos  */
+
+/* DESKTOP 🖥️ */
+@media (min-width: 992px) {
+  .hidden-desktop,
+  .hidden-tablet-desktop,
+  .show-only-tablet,
+  .show-only-mobile {
+    display: none !important;
+  }
+}
+
+/* TABLET 📱*/
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .hidden-tablet,
+  .hidden-tablet-desktop,
+  .hidden-tablet-mobile,
+  .show-only-desktop,
+  .show-only-mobile {
+    display: none !important;
+  }
+}
+
+/* MOBILE 📱 */
+@media (max-width: 767.98px) {
+  .hidden-mobile,
+  .hidden-tablet-mobile,
+  .show-only-desktop,
+  .show-only-tablet {
+    display: none !important;
+  }
+}
+
+/*  SISTEMA GRID
+ *  👽 e-grid: Distribución automática del contenido
+ *  😀 e-grid-16: Distribución a 16 columnas. 
+ *  😋 e-grid-12: Distribución a 12 columnas.
+ *  😮 e-grid-10: Distribución a 10 columnas.
+ */
+
+/* COL: Es cada una de las columnas que existen dentro del sistema de columnas. */
+/* OFFSET: Es un espacio vacío a la izquierda de una columna, ese espacio será una columna dentro de Easy-Grid. */
+
+.e-grid,
+.e-grid-12,
+.e-grid-16,
+.e-grid-10 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin: -7.5px -7.5px;
+}
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-13,
+.col-14,
+.col-15,
+.col-16,
+.col-auto {
+  position: relative;
+  padding: 8px 8px;
+  max-width: 100%;
+  width: 100%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+/* GRID 12 COLUMNAS */
+
+/* Columna 1, Offset 1 */
+.e-grid-12 > .col-1 {
+  width: 8.33333%;
+}
+
+.e-grid-12 > .offset-1 {
+  margin-left: 8.33333%;
+}
+
+/* Columna 2, Offset 2 */
+.e-grid-12 > .col-2 {
+  width: 16.66667%;
+}
+
+.e-grid-12 > .offset-2 {
+  margin-left: 16.66667%;
+}
+
+/* Columna 3, Offset 3 */
+.e-grid-12 > .col-3 {
+  width: 25%;
+}
+
+.e-grid-12 > .offset-3 {
+  margin-left: 25%;
+}
+
+/* Columna 4, Offset 4 */
+.e-grid-12 > .col-4 {
+  width: 33.33333%;
+}
+
+.e-grid-12 > .offset-4 {
+  margin-left: 33.33333%;
+}
+
+/* Columna 5, Offset 5 */
+.e-grid-12 > .col-5 {
+  width: 41.66667%;
+}
+
+.e-grid-12 > .offset-5 {
+  margin-left: 41.66667%;
+}
+
+/* Columna 6, Offset 6 */
+.e-grid-12 > .col-6 {
+  width: 50%;
+}
+
+.e-grid-12 > .offset-6 {
+  margin-left: 50%;
+}
+
+/* Columna 7, Offset 7 */
+.e-grid-12 > .col-7 {
+  width: 58.33333%;
+}
+
+.e-grid-12 > .offset-7 {
+  margin-left: 58.33333%;
+}
+
+/* Columna 8, Offset 8 */
+.e-grid-12 > .col-8 {
+  width: 66.66667%;
+}
+
+.e-grid-12 > .offset-8 {
+  margin-left: 66.66667%;
+}
+
+/* Columna 9, Offset 9 */
+.e-grid-12 > .col-9 {
+  width: 75%;
+}
+
+.e-grid-12 > .offset-9 {
+  margin-left: 75%;
+}
+
+/* Columna 10, Offset 10 */
+.e-grid-12 > .col-10 {
+  width: 83.33333%;
+}
+
+.e-grid-12 > .offset-10 {
+  margin-left: 83.33333%;
+}
+
+/* Columna 11, Offset 11 */
+.e-grid-12 > .col-11 {
+  width: 91.66667%;
+}
+
+.e-grid-12 > .offset-11 {
+  margin-left: 91.66667%;
+}
+
+/* Columna 12, No tiene offset */
+.e-grid-12 > .col-12 {
+  width: 100%;
+}
+
+/* GRID 16 COLUMNAS */
+
+/* Columna 1, Offset 1 */
+.e-grid-16 > .col-1 {
+  width: 6.25%;
+}
+
+.e-grid-16 > .offset-1 {
+  margin-left: 6.25%;
+}
+
+/* Columna 2, Offset 2 */
+.e-grid-16 > .col-2 {
+  width: 12.5%;
+}
+
+.e-grid-16 > .offset-2 {
+  margin-left: 12.5%;
+}
+
+/* Columna 3, Offset 3 */
+.e-grid-16 > .col-3 {
+  width: 18.75%;
+}
+
+.e-grid-16 > .offset-3 {
+  margin-left: 18.75%;
+}
+
+/* Columna 4, Offset 4 */
+.e-grid-16 > .col-4 {
+  width: 25%;
+}
+
+.e-grid-16 > .offset-4 {
+  margin-left: 25%;
+}
+
+/* Columna 5, Offset 5 */
+.e-grid-16 > .col-5 {
+  width: 31.25%;
+}
+
+.e-grid-16 > .offset-5 {
+  margin-left: 31.25%;
+}
+
+/* Columna 6, Offset 6 */
+.e-grid-16 > .col-6 {
+  width: 37.5%;
+}
+
+.e-grid-16 > .offset-6 {
+  margin-left: 37.5%;
+}
+
+/* Columna 7, Offset 7 */
+.e-grid-16 > .col-7 {
+  width: 43.75%;
+}
+
+.e-grid-16 > .offset-7 {
+  margin-left: 43.75%;
+}
+
+/* Columna 8, Offset 8 */
+.e-grid-16 > .col-8 {
+  width: 50%;
+}
+
+.e-grid-16 > .offset-8 {
+  margin-left: 50%;
+}
+
+/* Columna 9, Offset 9 */
+.e-grid-16 > .col-9 {
+  width: 56.25%;
+}
+
+.e-grid-16 > .offset-9 {
+  margin-left: 56.25%;
+}
+
+/* Columna 10, Offset 10 */
+.e-grid-16 > .col-10 {
+  width: 62.5%;
+}
+
+.e-grid-16 > .offset-10 {
+  margin-left: 62.5%;
+}
+
+/* Columna 11, Offset 11 */
+.e-grid-16 > .col-11 {
+  width: 68.75%;
+}
+
+.e-grid-16 > .offset-11 {
+  margin-left: 68.75%;
+}
+
+/* Columna 12, Offset 12 */
+.e-grid-16 > .col-12 {
+  width: 75%;
+}
+
+.e-grid-16 > .offset-12 {
+  margin-left: 75%;
+}
+
+/* Columna 13, Offset 13 */
+.e-grid-16 > .col-13 {
+  width: 81.25%;
+}
+
+.e-grid-16 > .offset-13 {
+  margin-left: 81.25%;
+}
+
+/* Columna 14, Offset 14 */
+.e-grid-16 > .col-14 {
+  width: 87.5%;
+}
+
+.e-grid-16 > .offset-14 {
+  margin-left: 87.5%;
+}
+
+/* Columna 15, Offset 15 */
+.e-grid-16 > .col-15 {
+  width: 93.75%;
+}
+
+.e-grid-16 > .offset-15 {
+  margin-left: 93.75%;
+}
+
+/* Columna 16, No tiene offset */
+.e-grid-16 > .col-16 {
+  width: 100%;
+}
+
+/* GRID 10 COLUMNAS */
+
+/* Columna 1, Offset 1 */
+.e-grid-10 > .col-1 {
+  width: 10%;
+}
+
+.e-grid-10 > .offset-1 {
+  margin-left: 10%;
+}
+
+/* Columna 2, Offset 2 */
+.e-grid-10 > .col-2 {
+  width: 20%;
+}
+
+.e-grid-10 > .offset-2 {
+  margin-left: 20%;
+}
+
+/* Columna 3, Offset 3 */
+.e-grid-10 > .col-3 {
+  width: 30%;
+}
+
+.e-grid-10 > .offset-3 {
+  margin-left: 30%;
+}
+
+/* Columna 4, Offset 4 */
+.e-grid-10 > .col-4 {
+  width: 40%;
+}
+
+.e-grid-10 > .offset-4 {
+  margin-left: 40%;
+}
+
+/* Columna 5, Offset 5 */
+.e-grid-10 > .col-5 {
+  width: 50%;
+}
+
+.e-grid-10 > .offset-5 {
+  margin-left: 50%;
+}
+
+/* Columna 6, Offset 6 */
+.e-grid-10 > .col-6 {
+  width: 60%;
+}
+
+.e-grid-10 > .offset-6 {
+  margin-left: 60%;
+}
+
+/* Columna 7, Offset 7 */
+.e-grid-10 > .col-7 {
+  width: 70%;
+}
+
+.e-grid-10 > .offset-7 {
+  margin-left: 70%;
+}
+
+/* Columna 8, Offset 8 */
+.e-grid-10 > .col-8 {
+  width: 80%;
+}
+
+.e-grid-10 > .offset-8 {
+  margin-left: 80%;
+}
+
+/* Columna 9, Offset 9 */
+
+.e-grid-10 > .col-9 {
+  width: 90%;
+}
+
+.e-grid-10 > .offset-9 {
+  margin-left: 90%;
+}
+
+/* Columna 10, No tiene offset*/
+
+.e-grid-10 > .col-10 {
+  width: 100%;
+}
+
+/* 😮 CONTENIDO FLEXIBLE */
+/* col-auto, se adapta al tamaño del contenido que hay en el, cambia el ancho de la columna automáticamente */
+/* flex, permite agregar una columna flexible al grid donde su contenido se adapta automáticamente y rellenar el espacio disponible */
+
+.col-auto {
+  width: auto;
+}
+
+.flex.col,
+.flex[class*="col-"] {
+  margin-left: 0;
+}
+
+.flex.col,
+.flex.col-auto {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: 0;
+}
+
+/* Contenido flexible a 1 columna */
+
+.flex.col-1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+/* Contenido flexible a 2 columnas */
+.flex.col-2 {
+  -webkit-box-flex: 2;
+  -ms-flex: 2 2 auto;
+  flex: 2 2 auto;
+}
+
+/* Contenido flexible a 3 columnas */
+.flex.col-3 {
+  -webkit-box-flex: 3;
+  -ms-flex: 3 3 auto;
+  flex: 3 3 auto;
+}
+
+/* Contenido flexible a 4 columnas */
+.flex.col-4 {
+  -webkit-box-flex: 4;
+  -ms-flex: 4 4 auto;
+  flex: 4 4 auto;
+}
+
+/* Contenido flexible a 5 columnas */
+.flex.col-5 {
+  -webkit-box-flex: 5;
+  -ms-flex: 5 5 auto;
+  flex: 5 5 auto;
+}
+
+/* Contenido flexible a 6 columnas */
+.flex.col-6 {
+  -webkit-box-flex: 6;
+  -ms-flex: 6 6 auto;
+  flex: 6 6 auto;
+}
+
+/* Contenido flexible a 7 columnas */
+.flex.col-7 {
+  -webkit-box-flex: 7;
+  -ms-flex: 7 7 auto;
+  flex: 7 7 auto;
+}
+
+/* Contenido flexible a 8 columnas */
+.flex.col-8 {
+  -webkit-box-flex: 8;
+  -ms-flex: 8 8 auto;
+  flex: 8 8 auto;
+}
+
+/* Contenido flexible a 9 columnas */
+.flex.col-9 {
+  -webkit-box-flex: 9;
+  -ms-flex: 9 9 auto;
+  flex: 9 9 auto;
+}
+
+/* Contenido flexible a 10 columnas */
+.flex.col-10 {
+  -webkit-box-flex: 10;
+  -ms-flex: 10 10 auto;
+  flex: 10 10 auto;
+}
+
+/* Contenido flexible a 11 columnas */
+.flex.col-11 {
+  -webkit-box-flex: 11;
+  -ms-flex: 11 11 auto;
+  flex: 11 11 auto;
+}
+
+/* Contenido flexible a 12 columnas */
+.flex.col-12 {
+  -webkit-box-flex: 12;
+  -ms-flex: 12 12 auto;
+  flex: 12 12 auto;
+}
+
+/* Contenido flexible a 13 columnas */
+.flex.col-13 {
+  -webkit-box-flex: 13;
+  -ms-flex: 13 13 auto;
+  flex: 13 13 auto;
+}
+
+/* Contenido flexible a 14 columnas */
+.flex.col-14 {
+  -webkit-box-flex: 14;
+  -ms-flex: 14 14 auto;
+  flex: 14 14 auto;
+}
+
+/* Contenido flexible a 15 columnas */
+.flex.col-15 {
+  -webkit-box-flex: 15;
+  -ms-flex: 15 15 auto;
+  flex: 15 15 auto;
+}
+
+/* Media queries para el contenido flexible en los difeentes dispositivos */
+
+/* TABLET 📱*/
+@media (max-width: 991.98px) {
+  .flex-tablet.col,
+  .flex-tablet[class*="col-"] {
+    margin-left: 0;
+  }
+  .flex-tablet.col,
+  .flex-tablet.col-auto {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 0;
+  }
+  /* Contenido flexible a 1 columna */
+
+  .flex-tablet.col-1 {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  /* Contenido flexible a 2 columnas */
+  .flex-tablet.col-2 {
+    -webkit-box-flex: 2;
+    -ms-flex: 2 2 auto;
+    flex: 2 2 auto;
+  }
+  /* Contenido flexible a 3 columnas */
+  .flex-tablet.col-3 {
+    -webkit-box-flex: 3;
+    -ms-flex: 3 3 auto;
+    flex: 3 3 auto;
+  }
+  /* Contenido flexible a 4 columnas */
+  .flex-tablet.col-4 {
+    -webkit-box-flex: 4;
+    -ms-flex: 4 4 auto;
+    flex: 4 4 auto;
+  }
+  /* Contenido flexible a 5 columnas */
+  .flex-tablet.col-5 {
+    -webkit-box-flex: 5;
+    -ms-flex: 5 5 auto;
+    flex: 5 5 auto;
+  }
+  /* Contenido flexible a 6 columnas */
+  .flex-tablet.col-6 {
+    -webkit-box-flex: 6;
+    -ms-flex: 6 6 auto;
+    flex: 6 6 auto;
+  }
+  /* Contenido flexible a 7 columnas */
+  .flex-tablet.col-7 {
+    -webkit-box-flex: 7;
+    -ms-flex: 7 7 auto;
+    flex: 7 7 auto;
+  }
+  /* Contenido flexible a 8 columnas */
+  .flex-tablet.col-8 {
+    -webkit-box-flex: 8;
+    -ms-flex: 8 8 auto;
+    flex: 8 8 auto;
+  }
+  /* Contenido flexible a 9 columnas */
+  .flex-tablet.col-9 {
+    -webkit-box-flex: 9;
+    -ms-flex: 9 9 auto;
+    flex: 9 9 auto;
+  }
+  /* Contenido flexible a 10 columnas */
+  .flex-tablet.col-10 {
+    -webkit-box-flex: 10;
+    -ms-flex: 10 10 auto;
+    flex: 10 10 auto;
+  }
+  /* Contenido flexible a 11 columnas */
+  .flex-tablet.col-11 {
+    -webkit-box-flex: 11;
+    -ms-flex: 11 11 auto;
+    flex: 11 11 auto;
+  }
+  /* Contenido flexible a 12 columnas */
+  .flex-tablet.col-12 {
+    -webkit-box-flex: 12;
+    -ms-flex: 12 12 auto;
+    flex: 12 12 auto;
+  }
+  /* Contenido flexible a 13 columnas */
+  .flex-tablet.col-13 {
+    -webkit-box-flex: 13;
+    -ms-flex: 13 13 auto;
+    flex: 13 13 auto;
+  }
+  /* Contenido flexible a 14 columnas */
+  .flex-tablet.col-14 {
+    -webkit-box-flex: 14;
+    -ms-flex: 14 14 auto;
+    flex: 14 14 auto;
+  }
+  /* Contenido flexible a 15 columnas */
+  .flex-tablet.col-15 {
+    -webkit-box-flex: 15;
+    -ms-flex: 15 15 auto;
+    flex: 15 15 auto;
+  }
+}
+
+/* MOBILE 📱*/
+
+@media (max-width: 767.98px) {
+  .flex-mobile.col,
+  .flex-mobile[class*="col-"] {
+    margin-left: 0;
+  }
+  .flex-mobile.col,
+  .flex-mobile.col-auto {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 0;
+  }
+  /* Contenido flexible a 1 columna */
+  .flex-mobile.col-1 {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  /* Contenido flexible a 2 columnas */
+  .flex-mobile.col-2 {
+    -webkit-box-flex: 2;
+    -ms-flex: 2 2 auto;
+    flex: 2 2 auto;
+  }
+  /* Contenido flexible a 3 columnas */
+  .flex-mobile.col-3 {
+    -webkit-box-flex: 3;
+    -ms-flex: 3 3 auto;
+    flex: 3 3 auto;
+  }
+  /* Contenido flexible a 4 columnas */
+  .flex-mobile.col-4 {
+    -webkit-box-flex: 4;
+    -ms-flex: 4 4 auto;
+    flex: 4 4 auto;
+  }
+  /* Contenido flexible a 5 columnas */
+  .flex-mobile.col-5 {
+    -webkit-box-flex: 5;
+    -ms-flex: 5 5 auto;
+    flex: 5 5 auto;
+  }
+  /* Contenido flexible a 6 columnas */
+  .flex-mobile.col-6 {
+    -webkit-box-flex: 6;
+    -ms-flex: 6 6 auto;
+    flex: 6 6 auto;
+  }
+  /* Contenido flexible a 7 columnas */
+  .flex-mobile.col-7 {
+    -webkit-box-flex: 7;
+    -ms-flex: 7 7 auto;
+    flex: 7 7 auto;
+  }
+  /* Contenido flexible a 8 columnas */
+  .flex-mobile.col-8 {
+    -webkit-box-flex: 8;
+    -ms-flex: 8 8 auto;
+    flex: 8 8 auto;
+  }
+  /* Contenido flexible a 9 columnas */
+  .flex-mobile.col-9 {
+    -webkit-box-flex: 9;
+    -ms-flex: 9 9 auto;
+    flex: 9 9 auto;
+  }
+  /* Contenido flexible a 10 columnas */
+  .flex-mobile.col-10 {
+    -webkit-box-flex: 10;
+    -ms-flex: 10 10 auto;
+    flex: 10 10 auto;
+  }
+  /* Contenido flexible a 11 columnas */
+  .flex-mobile.col-11 {
+    -webkit-box-flex: 11;
+    -ms-flex: 11 11 auto;
+    flex: 11 11 auto;
+  }
+  /* Contenido flexible a 12 columnas */
+  .flex-mobile.col-12 {
+    -webkit-box-flex: 12;
+    -ms-flex: 12 12 auto;
+    flex: 12 12 auto;
+  }
+  /* Contenido flexible a 13 columnas */
+  .flex-mobile.col-13 {
+    -webkit-box-flex: 13;
+    -ms-flex: 13 13 auto;
+    flex: 13 13 auto;
+  }
+  /* Contenido flexible a 14 columnas */
+  .flex-mobile.col-14 {
+    -webkit-box-flex: 14;
+    -ms-flex: 14 14 auto;
+    flex: 14 14 auto;
+  }
+  /* Contenido flexible a 15 columnas */
+  .flex-mobile.col-15 {
+    -webkit-box-flex: 15;
+    -ms-flex: 15 15 auto;
+    flex: 15 15 auto;
+  }
+}
+
+/* 🧊🧊 ORDEN */
+/* Media queries para ordenar elementos*/
+
+/* DESKTOP 🖥️ */
+@media (min-width: 992px) {
+  .order-first-desktop {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  .order-last-desktop {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+/* TABLET 📱 */
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .order-first-tablet {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  .order-last-tablet {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+/* MOBILE 📱 */
+
+@media (max-width: 767.98px) {
+  .order-first-mobile {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  .order-last-mobile {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+/* 🌀 BREAKPOINTS */
+/* Puntos de quiebre y numero de columnas a visualizar por cada dispoitivo, la división del contenido 
+*  se realiza de forma automática y proporcional al contenedor
+*  IMPORTANTE: Esta opción permite generar las columnas de forma automática sin necesidad de especificar la medida de la columna.
+*/
+
+
+/* DESKTOP 🖥️ */
+@media (min-width: 992px) {
+  .desktop-1 > .col,
+  .desktop-1 > [class*="col-"] {
+    margin-left: 0;
+    width: 100%;
+  }
+  .desktop-2 > .col,
+  .desktop-2 > [class*="col-"] {
+    margin-left: 0;
+    width: 50%;
+  }
+  .desktop-3 > .col,
+  .desktop-3 > [class*="col-"] {
+    margin-left: 0;
+    width: 33.33333%;
+  }
+  .desktop-4 > .col,
+  .desktop-4 > [class*="col-"] {
+    margin-left: 0;
+    width: 25%;
+  }
+  .desktop-5 > .col,
+  .desktop-5 > [class*="col-"] {
+    margin-left: 0;
+    width: 20%;
+  }
+  .desktop-6 > .col,
+  .desktop-6 > [class*="col-"] {
+    margin-left: 0;
+    width: 16.66667%;
+  }
+  .desktop-7 > .col,
+  .desktop-7 > [class*="col-"] {
+    margin-left: 0;
+    width: 14.28571%;
+  }
+  .desktop-8 > .col,
+  .desktop-8 > [class*="col-"] {
+    margin-left: 0;
+    width: 12.5%;
+  }
+}
+
+/* TABLET 📱 */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .tablet-1 > .col,
+  .tablet-1 > [class*="col-"] {
+    margin-left: 0;
+    width: 100%;
+  }
+  .tablet-2 > .col,
+  .tablet-2 > [class*="col-"] {
+    margin-left: 0;
+    width: 50%;
+  }
+  .tablet-3 > .col,
+  .tablet-3 > [class*="col-"] {
+    margin-left: 0;
+    width: 33.33333%;
+  }
+  .tablet-4 > .col,
+  .tablet-4 > [class*="col-"] {
+    margin-left: 0;
+    width: 25%;
+  }
+  .tablet-5 > .col,
+  .tablet-5 > [class*="col-"] {
+    margin-left: 0;
+    width: 20%;
+  }
+  .tablet-6 > .col,
+  .tablet-6 > [class*="col-"] {
+    margin-left: 0;
+    width: 16.66667%;
+  }
+}
+
+/* MOBILE 📱 */
+@media (max-width: 767.98px) {
+  .mobile-1 > .col,
+  .mobile-1 > [class*="col-"] {
+    margin-left: 0;
+    width: 100%;
+  }
+  .mobile-2 > .col,
+  .mobile-2 > [class*="col-"] {
+    margin-left: 0;
+    width: 50%;
+  }
+  .mobile-3 > .col,
+  .mobile-3 > [class*="col-"] {
+    margin-left: 0;
+    width: 33.33333%;
+  }
+  .mobile-4 > .col,
+  .mobile-4 > [class*="col-"] {
+    margin-left: 0;
+    width: 25%;
+  }
+}
+
+/* 🧩 GAPS */
+/* Elimina los espacios dentro del sistema de columnas, elimina el margen entre ellos 😋 */
+
+.no-gaps {
+  margin: 0;
+}
+
+.no-gaps > .col,
+.no-gaps > [class*="col-"] {
+  padding: 0;
+}
+
+/* 💗 ALINE....ACIÓN */
+/* Permite alinear con flex las columnas del contenedor principal */
+
+/* ALINEACIÓN HORIZONTAL : MAIN-AXIS 
+
+/* Alineación al centro */
+.align-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* Alineación a la derecha */
+.align-right {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+/* Alineación proporcional externa */
+.align-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+/* ALineación entre columnas */
+.align-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/* ALINEACIÓN HORIZONTAL : CROSS-AXIS */
+
+/* ALineación superior */
+.align-top {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+/* ALineación al centro (vertical) */
+.align-middle {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* ALineación inferior  */
+.align-bottom {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+/* 🎈 TOOLS */
+/* Permite dar estilos a los elementos como backgrounds, width, margin y padding */
+
+/*Genera un componente al 100% para crear un row y forza el quiebre de las columnas */
+.w-100 {
+  width: 100% !important;
+}
+
+/* Permite estableer los márgenes automáticos a los elementos */
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Permite establecer los márgenes predeterminados a los elementos */
+.ml-1 {
+  margin-left: 5px;
+}
+
+.ml-2 {
+  margin-left: 10px;
+}
+
+.ml-3 {
+  margin-left: 15px;
+}
+
+.mr-1 {
+  margin-right: 5px;
+}
+
+.mr-2 {
+  margin-right: 10px;
+}
+
+.mr-3 {
+  margin-right: 15px;
+}
+
+.mt-1 {
+  margin-top: 5px;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.mb-1 {
+  margin-bottom: 5px;
+}
+
+.mb-2 {
+  margin-bottom: 10px;
+}
+
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+/* 🎨 Backgrounds */ 
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-1{
+  background: #f6e58d;
+}
+
+.bg-2{
+  background: #ff7979;
+}
+
+/* 🎨 Color de texto */ 
+
+.text.primary {
+  color: var(--text-primary);
+}
+
+.text-light{
+  color: var(--text-light)
+}
+
+/* Box */
+
+.title-grid{
+  color: var(--text-primary);
+}
+
+.subtitle-grid{
+  color: #b2bec3;
+  font-size: 14px;
+}
+
+.demo-box{
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+}

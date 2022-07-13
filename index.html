@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/easy-grid.css">
+    <title>Easy Grid 🧩</title>
+</head>
+
+<body>
+    <!-- Se requiere de un contenedor principal -->
+    <div class="container">
+        <h1 class="title-grid">Easy Grid</h1>
+        <p class="subtitle-grid">Maqueta tus proyectos de manera fácil con easy grid.</p>
+
+        <!-- Se debe generar un contenedor con la clase grid y especificar el sistema de columnas a trabajar: e-grid, e-grid-16, e-grid-12, e-grid-10-->
+        <div class="e-grid-12 align-center tablet-2 mobile-3 mt-3"> <!-- Se puede determinar cuantas columnas se deberan ver por dispositivo ejemplo: Tablet(2 columnas), Movil(3 columnas)-->
+
+            <div class="col-1"> <!-- Se genera la columna de acuerdo a lo que se requiera en columnas definidas: col-1, col-2,col-3... -->
+              <div class="demo-box bg-primary">
+              </div>
+            </div>
+            <div class="col-1 hidden-tablet hidden-mobile"> 
+                <div class="demo-box bg-1"> <!-- podemos ocultar elementos en ciertos dispositivos: este elemento no se mostrara en tablet y en móvil-->
+                </div>
+            </div>
+            <div class="col-1"> 
+                <div class="demo-box bg-primary">
+                </div>
+            </div>
+            <div class="col-1 hidden-mobile"> 
+                <div class="demo-box bg-1"> <!-- podemos ocultar elementos en ciertos dispositivos: este elemento no se mostrara en movil-->
+                </div>
+            </div>
+            <div class="col-1"> 
+                <div class="demo-box bg-primary">
+                </div>
+            </div>
+            <div class="col-1"> 
+                <div class="demo-box bg-primary">
+                </div>
+            </div>
+            <div class="col-1"> 
+                <div class="demo-box bg-primary">
+                </div>
+            </div>
+            <div class="col-1"> 
+                <div class="demo-box bg-primary">
+                </div>
+            </div>
+            <div class="col-1"> 
+                <div class="demo-box bg-primary">
+                </div>
+            </div>
+            <div class="col-1"> 
+                <div class="demo-box bg-primary">
+                </div>
+            </div>
+            <div class="col-1"> 
+                <div class="demo-box bg-primary">
+                </div>
+            </div>
+            <div class="col-1 show-only-desktop"> 
+                <div class="demo-box bg-2"> <!-- podemos ocultar elementos en ciertos dispositivos: este elemento no se mostrara solo en desktop-->
+                </div>
+            </div>
+           
+        </div>
+
+    </div>
+</body>
+
+</html>
