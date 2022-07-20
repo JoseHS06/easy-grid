@@ -9,10 +9,149 @@
     <title>Easy Grid 🧩</title>
 </head>
 
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    header {
+        background: #009929;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+    }
+
+    nav {
+        float: left;
+    }
+
+    nav ul {
+        list-style: none;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        float: left;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+
+    nav ul li button {
+        display: block;
+        padding: 20px;
+        color: rgb(255, 255, 255, 0.85);
+        text-decoration: none;
+        background: none;
+        border: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+
+    nav ul li:hover {
+        background: #5ccb5f;
+        color: rgb(255, 255, 255);
+
+    }
+
+    .content {
+        padding-top: 80px;
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    h1 {
+        font-weight: lighter;
+        margin-left: 20px;
+    }
+
+    .b-primary {
+        background: #fff;
+        border-color: #9b9a9a;
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: lighter;
+        color: #6e6e6e;
+        margin-left: 10px;
+        border-width: 1px;
+        border-radius: 5px;
+    }
+
+    .b-primary:hover {
+        color: rgb(0, 0, 0);
+        border-width: 1px;
+        border-color: #009929;
+        color: #009929;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-right {
+        justify-content: right;
+        padding-right: 20px;
+    }
+
+    .btn {
+	display: inline-block;
+	padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+	font-family: var(--bs-btn-font-family);
+	font-size: var(--bs-btn-font-size);
+	font-weight: var(--bs-btn-font-weight);
+	line-height: var(--bs-btn-line-height);
+	color: var(--bs-btn-color);
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+	border-radius: var(--bs-btn-border-radius);
+	background-color: var(--bs-btn-bg);
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+</style>
+
 <body>
+    <header>
+        <nav>
+
+            <ul>
+                <li><button id="lnkEasyGrid" href="#">Easy Grid</button></li>
+                <li><button id="lnkDocumentacion" href="#">Documentación</button></li>
+            </ul>
+        </nav>
+    </header>
 
 
-    <div class="container">
+    <div class="content"></div>
+    <div id="divAcercaDe">
+        
+        <h1>Easy Grid, primeros pasos</h1>
+        <div class="d-flex justify-right">
+            <button class="b-primary">Ver en GitHub</button>
+        </div>
+        <p>Easy Grid es una hoja de estilos que te permitira incluir maquetado responsivo para tus propios diseños de estilo</p> 
+    
+        <h1>Quick start</h1>
+        <p>Crea un nuevo archivo index.html en tu proyecto y agrega la referencia de esta libreria CSS</p>
+    </div>
+    
+    <div class="container d-none" id="divDocumentacion">
 
         <h1 class="title-grid">Easy Grid</h1>
         <p class="subtitle-grid mb-2">Maqueta tus proyectos de manera fácil con easy grid.</p>
@@ -302,7 +441,8 @@
                 <div class="demo-box bg-5">
                 </div>
             </div>
-            <div class="w-100"> <!-- Se agrega un div con un width de 100% para romper la linea-->
+            <div class="w-100">
+                <!-- Se agrega un div con un width de 100% para romper la linea-->
             </div>
             <div class="col-3">
                 <div class="demo-box bg-5">
@@ -328,7 +468,8 @@
 
         <b class="subtitle-grid">😎 Gaps</b>
 
-         <div class="e-grid-12 no-gaps mt-3 mb-3"> <!-- Para quitar los espacios (paddings) entre cada columna se agrega la clase: no-gaps-->
+        <div class="e-grid-12 no-gaps mt-3 mb-3">
+            <!-- Para quitar los espacios (paddings) entre cada columna se agrega la clase: no-gaps-->
 
             <div class="col-1">
                 <div class="demo-box bg-4">
@@ -387,6 +528,30 @@
 
 
 
+    <script>
+        const lnkEasyGrid = document.querySelector("#lnkEasyGrid"),
+            lnkDocumentacion = document.querySelector("#lnkDocumentacion"),
+            divAcercaDe = document.querySelector("#divAcercaDe"),
+            divDocumentacion = document.querySelector("#divDocumentacion");
+
+        let configuration = {
+            'section': 1
+        };
+
+        lnkEasyGrid.addEventListener("click", () => {
+            configuration.section = 1;
+            divAcercaDe.classList.remove('d-none');
+            divDocumentacion.classList.add('d-none');
+
+        });
+
+        lnkDocumentacion.addEventListener("click", () => {
+            configuration.section = 2;
+            divDocumentacion.classList.remove('d-none');
+            divAcercaDe.classList.add('d-none');
+
+        });
+    </script>
 
 
 
