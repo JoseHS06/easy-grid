@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/easy-grid.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Easy Grid 🧩</title>
+	<link href="./assets/prismjs/prism.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+
+            <ul>
+                <li><button class="active" id="lnkEasyGrid" href="#">Easy Grid</button></li>
+                <li><button id="lnkDocumentacion" href="#">Documentación</button></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="content"></div>
+    <div class="container d-none" id="divAcercaDe">
+        <h1 class="title-grid">Easy Grid, primeros pasos</h1>
+        <div class="d-flex justify-right">
+            <button class="b-primary" id="btnGit">Ver en GitHub</button>
+        </div>
+        <p class="subtitle-grid mb-2">Easy Grid es una hoja de estilos que te permitira incluir maquetado responsivo
+            para tus propios diseños de estilo</p>
+        <h1 class="title-grid">Quick start</h1>
+        <p class="subtitle-grid mb-2">Crea un nuevo archivo index.html en tu proyecto y agrega la referencia de esta
+            libreria CSS</p>
+        <div class="e-grid-12 mt-3 mb-3">
+            <div class="col-12">
+                <pre>
+                        <code class="language-html">
+&lt;link rel="stylesheet" href="./assets/css/easy-grid.css"&gt;
+                        </code>
+                    </pre>
+                <b class="subtitle-grid">
+                    * Verifica la ruta en tu proyecto que acceda a la hoja de estilos
+                </b>
+                <p class="subtitle-grid">
+                    Incluye el cuerpo HTML
+
+                </p>
+                <p class="subtitle-grid">Dentro del body coloca el contenedor que hará posible el manejo del grid</p>
+                <pre>
+                     <code class="language-html">
+ &lt;!DOCTYPE html&gt;
+ &lt;html lang="en"&gt;
+ &lt;head&gt;
+     &lt;meta charset="UTF-8"&gt;
+     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+     &lt;title&gt;Document&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+     &lt;div class="container"&gt;
+     // Contenido
+     &lt;/div&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+                    </code>
+                </pre>
+                <p class="subtitle-grid">
+                    Con esto estará listo lo necesario para integrar el grid que necesites
+                </p>
+
+            </div>
+            <div class="col-12 d-flex justify-right">
+                <button class="b-primary" id="btnIrDocumentacion">Ir a la documentación ➡</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="divDocumentacion">
+
+        <h1 class="title-grid">Easy Grid</h1>
+        <p class="subtitle-grid mb-2">Maqueta tus proyectos de manera fácil con Easy Grid.</p>
+
+
+        <!-- Forma 1 de construir el layout: especificar la medida del grid y las columnas-->
+
+        <b class="subtitle-grid">😋 Layout por medidas del grid (16, 12, 10) y sus columnas</b>
+        <p class="subtitle-grid">La medida que se defina en el Grid permitirá el uso del total del contenedor, si el Grid esta definido en e-grid-12 y si hay mas de 12 columnas la siguiente se mostrará en la siguiente fila</p>
+
+        <!-- Se debe generar un contenedor con la clase grid y especificar el sistema de columnas a trabajar: e-grid-16, e-grid-12, e-grid-10-->
+        <div class="e-grid-12 mt-3 mb-3">
+
+            <div class="col-1">
+                <!-- Se genera la columna de acuerdo a lo que se requiera en columnas definidas: col-1, col-2,col-3... -->
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                    <!-- podemos ocultar elementos en ciertos dispositivos: este elemento no se mostrara solo en desktop-->
+                </div>
+            </div>
+        </div>
+
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid-12 mt-3 mb-3">
+
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
+
+
+        <!-- Forma 2 de construir el layout: layout por tipo de dispositivo-->
+
+        <b class="subtitle-grid">😮 Layout por tipo de dispositivo</b>
+        <p class="subtitle-grid">En este caso no es necesario especificar la cantidad de columnas</p>
+        <p class="subtitle-grid">Ni tampoo es necesario especificar el tamaño de la columna</p>
+        
+        <b>Ejemplo 1</b>
+
+        <div class="e-grid mt-3">
+            <!-- En este caso no es necesario especificar la cantidad de columnas-->
+            <div class="col">
+                <!-- Ni tampoo es necesario especificar el tamaño de la columna-->
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid mt-3">
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
+        
+        <b>Ejemplo 2</b>
+        <div class="e-grid desktop-3 tablet-2 mobile-1">
+            <!-- al definir desktop 3 se divide en: 3 columnas -->
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                    <!-- No es necesario especificar la medida del col-->
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid desktop-3 tablet-2 mobile-1">
+    &lt;!-- al definir desktop 3 se divide en: 3 columnas -->
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+            &lt;!-- No es necesario especificar la medida del col-->
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
+
+        <b>Ejemplo 3</b>
+        <div class="e-grid desktop-4 tablet-3 mobile-2">
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid desktop-4 tablet-3 mobile-2">
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
+
+        <b>Ejemplo 4</b>
+        <div class="e-grid desktop-6 tablet-4 mobile-2 mb-3">
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+            <div class="col">
+                <div class="demo-box bg-primary align-center">
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid desktop-6 tablet-4 mobile-2 mb-3">
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
+
+
+
+        <!-- Forma 3 de construir el layout: ancho de la columna personalizado-->
+
+        <b class="subtitle-grid">🤪 Ancho de columna personalizado</b>
+
+        <div class="e-grid-12 mt-3 mb-3">
+            <div class="col-auto">
+                <!-- La columna toma la medida de su contenido y se adapta automáticamente en este caso la medida de la columna es 50px-->
+                <div class="demo-box bg-3" style="width: 50px">
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="demo-box bg-3" style="width: 200px">
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="demo-box bg-3" style="width: 200px">
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="demo-box bg-3" style="width: 300px">
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="demo-box bg-3" style="width: 200px">
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="demo-box bg-3" style="width: 159px">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Forma 4 de construir el layout: crear cajas flexibles-->
+        <!-- Agregando la clase flex las cajas e adaptan al espacio restante dentro del grid-->
+
+        <b class="subtitle-grid">🧐 Cajas Flexibles</b>
+
+        <div class="e-grid mt-3">
+            <div class="col-auto">
+                <div class="demo-box bg-1" style="width: 100px">
+                    <!-- La columna ocupa 100px-->
+                </div>
+            </div>
+            <div class="col flex">
+                <!-- Se agrega la clase y ocupa el espacio restante-->
+                <div class="demo-box bg-1">
+                </div>
+            </div>
+        </div>
+
+        <div class="e-grid">
+            <div class="col flex">
+                <div class="demo-box bg-1">
+                </div>
+            </div>
+            <div class="col flex">
+                <div class="demo-box bg-1">
+                </div>
+            </div>
+            <div class="col flex">
+                <div class="demo-box bg-1">
+                </div>
+            </div>
+            <div class="col flex">
+                <div class="demo-box bg-1">
+                </div>
+            </div>
+            <div class="col flex">
+                <div class="demo-box bg-1">
+                </div>
+            </div>
+        </div>
+
+        <div class="e-grid-12 mb-3">
+            <div class="col-2 flex-tablet">
+                <!-- Se puede especificar el que dispositivo debe ser flexible-->
+                <div class="demo-box bg-1">
+                    <!-- En este caso en desktop no lo es y toma su valor por defecto a 2 columnas-->
+                </div>
+            </div>
+            <div class="col flex">
+                <div class="demo-box bg-1">
+                </div>
+            </div>
+            <div class="col-2 flex-mobile">
+                <!-- Se puede especificar el que dispositivo debe ser flexible-->
+                <div class="demo-box bg-1">
+                    <!-- En este caso en desktop no lo es y toma su valor por defecto a 2 columnas-->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Offsets-->
+        <!-- Los espacios vacios permiten mover las columnas cierto numero de columnas en el grid-->
+
+        <b class="subtitle-grid mb-3">😯 Offsets (Espacios vacíos)</b>
+
+        <div class="e-grid-12 mobile-2 mt-3">
+            <!-- Para que funcione el offset se debe especificar el sistema es decir: 16, 12, 10-->
+            <div class="col-4 offset-1">
+                <!-- El offset es la separación que se hace hacia la izquierda, y equivale a una columna: offset-1 == col-1 -->
+                <div class="demo-box bg-2">
+                </div>
+            </div>
+            <div class="col-2 offset-3">
+                <div class="demo-box bg-2">
+                </div>
+            </div>
+        </div>
+
+        <div class="e-grid">
+            <div class="col-auto">
+                <div class="demo-box bg-2" style="width: 300px">
+                </div>
+            </div>
+            <div class="col-auto ml-auto">
+                <!-- Se pueden aplicar margenes automáticos para que se generen los espacios (offsets) de manera automática: margin-left: ml--->
+                <div class="demo-box bg-2" style="width: 300px">
+                </div>
+            </div>
+        </div>
+
+        <div class="e-grid mb-3">
+            <div class="col-auto">
+                <div class="demo-box bg-2" style="width: 300px">
+                </div>
+            </div>
+            <!-- Se pueden aplicar margenes automáticos para que se generen los espacios (offsets) y se CENTRE el contenido de manera automática: margin-auto: mx--->
+            <div class="col-auto mx-auto">
+                <div class="demo-box bg-2" style="width: 300px">
+                </div>
+            </div>
+        </div>
+
+        <!-- Saltos de linea-->
+        <!-- Los saltos de linea permiten iniciar otra linea automáticamente y definir las columnas sobre esa -->
+
+        <b class="subtitle-grid">🤯 Saltos de linea</b>
+
+        <div class="e-grid-12 mt-3 mb-3">
+            <div class="col-6">
+                <div class="demo-box bg-5">
+                </div>
+            </div>
+            <div class="w-100">
+                <!-- Se agrega un div con un width de 100% para romper la linea-->
+            </div>
+            <div class="col-3">
+                <div class="demo-box bg-5">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="demo-box bg-5">
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-5">
+                <div class="demo-box bg-5">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="demo-box bg-5">
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaps-->
+        <!-- Los gaps son los espacios entre las columnas que estan definidos en el grid, cada gap equivale a 16px -->
+
+        <b class="subtitle-grid">😎 Gaps</b>
+
+        <div class="e-grid-12 no-gaps mt-3 mb-3">
+            <!-- Para quitar los espacios (paddings) entre cada columna se agrega la clase: no-gaps-->
+
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="demo-box bg-4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script src="./assets/prismjs/prism.js"></script>
+<script>
+    const lnkEasyGrid = document.querySelector("#lnkEasyGrid"),
+        lnkDocumentacion = document.querySelector("#lnkDocumentacion"),
+        divAcercaDe = document.querySelector("#divAcercaDe"),
+        divDocumentacion = document.querySelector("#divDocumentacion"),
+        btnGit = document.querySelector("#btnGit");
+
+    let configuration = {
+        'section': 1
+    };
+
+    lnkEasyGrid.addEventListener("click", () => {
+        configuration.section = 1;
+        divAcercaDe.classList.remove('d-none');
+        divDocumentacion.classList.add('d-none');
+        lnkDocumentacion.classList.remove('active');
+        lnkEasyGrid.classList.add('active');
+    });
+
+    lnkDocumentacion.addEventListener("click", () => {
+        configuration.section = 2;
+        divDocumentacion.classList.remove('d-none');
+        divAcercaDe.classList.add('d-none');
+        lnkDocumentacion.classList.add('active');
+        lnkEasyGrid.classList.remove('active');
+    });
+
+    btnIrDocumentacion.addEventListener("click", () => {
+        configuration.section = 2;
+        divDocumentacion.classList.remove('d-none');
+        divAcercaDe.classList.add('d-none');
+        lnkDocumentacion.classList.add('active');
+        lnkEasyGrid.classList.remove('active');
+    });
+
+    btnGit.addEventListener("click", () => {
+        window.location.href = "https://github.com/JoseHS06/easy-grid.git";
+    });
+
+    addEventListener('load', function (event) {
+        PR.prettyPrint();
+    }, false);
+</script>
+
+
+
+</body>
+
+</html>

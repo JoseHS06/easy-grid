@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+header {
+    background: #009929;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+nav {
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+nav ul li button {
+    display: block;
+    padding: 20px;
+    color: rgb(255, 255, 255, 0.85);
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+nav ul li:hover {
+    background: #5ccb5f;
+    color: rgb(255, 255, 255);
+
+}
+
+.content {
+    padding-top: 80px;
+}
+
+.d-none {
+    display: none;
+}
+
+h1 {
+    font-weight: lighter;
+    margin-left: 20px;
+}
+
+.b-primary {
+    background: #fff;
+    border-color: #9b9a9a;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #6e6e6e;
+    margin-left: 10px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.b-primary:hover {
+    color: rgb(0, 0, 0);
+    border-width: 1px;
+    border-color: #009929;
+    color: #009929;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-right {
+    justify-content: right;
+    padding-right: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    font-family: var(--bs-btn-font-family);
+    font-size: var(--bs-btn-font-size);
+    font-weight: var(--bs-btn-font-weight);
+    line-height: var(--bs-btn-line-height);
+    color: var(--bs-btn-color);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    background-color: var(--bs-btn-bg);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.active {
+    background: #5ccb5f;
+    color: rgb(255, 255, 255);
+}
