@@ -6,132 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/easy-grid.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Easy Grid 🧩</title>
+	<link href="./assets/prismjs/prism.css" rel="stylesheet" />
 </head>
-
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-    }
-
-    p {
-        margin-bottom: 20px;
-        margin-top: 20px;
-        margin-left: 20px;
-    }
-
-    header {
-        background: #009929;
-        width: 100%;
-        position: fixed;
-        z-index: 100;
-    }
-
-    nav {
-        float: left;
-    }
-
-    nav ul {
-        list-style: none;
-        overflow: hidden;
-    }
-
-    nav ul li {
-        float: left;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
-    }
-
-    nav ul li button {
-        display: block;
-        padding: 20px;
-        color: rgb(255, 255, 255, 0.85);
-        text-decoration: none;
-        background: none;
-        border: none;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
-    }
-
-    nav ul li:hover {
-        background: #5ccb5f;
-        color: rgb(255, 255, 255);
-
-    }
-
-    .content {
-        padding-top: 80px;
-    }
-
-    .d-none {
-        display: none;
-    }
-
-    h1 {
-        font-weight: lighter;
-        margin-left: 20px;
-    }
-
-    .b-primary {
-        background: #fff;
-        border-color: #9b9a9a;
-        padding: 10px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        font-weight: lighter;
-        color: #6e6e6e;
-        margin-left: 10px;
-        border-width: 1px;
-        border-radius: 5px;
-    }
-
-    .b-primary:hover {
-        color: rgb(0, 0, 0);
-        border-width: 1px;
-        border-color: #009929;
-        color: #009929;
-    }
-
-    .d-flex {
-        display: flex;
-    }
-
-    .justify-right {
-        justify-content: right;
-        padding-right: 20px;
-    }
-
-    .btn {
-	display: inline-block;
-	padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
-	font-family: var(--bs-btn-font-family);
-	font-size: var(--bs-btn-font-size);
-	font-weight: var(--bs-btn-font-weight);
-	line-height: var(--bs-btn-line-height);
-	color: var(--bs-btn-color);
-	text-align: center;
-	text-decoration: none;
-	vertical-align: middle;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-	border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
-	border-radius: var(--bs-btn-border-radius);
-	background-color: var(--bs-btn-bg);
-	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-
-</style>
-
 <body>
     <header>
         <nav>
 
             <ul>
-                <li><button id="lnkEasyGrid" href="#">Easy Grid</button></li>
+                <li><button class="active" id="lnkEasyGrid" href="#">Easy Grid</button></li>
                 <li><button id="lnkDocumentacion" href="#">Documentación</button></li>
             </ul>
         </nav>
@@ -139,27 +23,70 @@
 
 
     <div class="content"></div>
-    <div id="divAcercaDe">
-        
-        <h1>Easy Grid, primeros pasos</h1>
+    <div class="container d-none" id="divAcercaDe">
+        <h1 class="title-grid">Easy Grid, primeros pasos</h1>
         <div class="d-flex justify-right">
-            <button class="b-primary">Ver en GitHub</button>
+            <button class="b-primary" id="btnGit">Ver en GitHub</button>
         </div>
-        <p>Easy Grid es una hoja de estilos que te permitira incluir maquetado responsivo para tus propios diseños de estilo</p> 
-    
-        <h1>Quick start</h1>
-        <p>Crea un nuevo archivo index.html en tu proyecto y agrega la referencia de esta libreria CSS</p>
+        <p class="subtitle-grid mb-2">Easy Grid es una hoja de estilos que te permitira incluir maquetado responsivo
+            para tus propios diseños de estilo</p>
+        <h1 class="title-grid">Quick start</h1>
+        <p class="subtitle-grid mb-2">Crea un nuevo archivo index.html en tu proyecto y agrega la referencia de esta
+            libreria CSS</p>
+        <div class="e-grid-12 mt-3 mb-3">
+            <div class="col-12">
+                <pre>
+                        <code class="language-html">
+&lt;link rel="stylesheet" href="./assets/css/easy-grid.css"&gt;
+                        </code>
+                    </pre>
+                <b class="subtitle-grid">
+                    * Verifica la ruta en tu proyecto que acceda a la hoja de estilos
+                </b>
+                <p class="subtitle-grid">
+                    Incluye el cuerpo HTML
+
+                </p>
+                <p class="subtitle-grid">Dentro del body coloca el contenedor que hará posible el manejo del grid</p>
+                <pre>
+                     <code class="language-html">
+ &lt;!DOCTYPE html&gt;
+ &lt;html lang="en"&gt;
+ &lt;head&gt;
+     &lt;meta charset="UTF-8"&gt;
+     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+     &lt;title&gt;Document&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+     &lt;div class="container"&gt;
+     // Contenido
+     &lt;/div&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+                    </code>
+                </pre>
+                <p class="subtitle-grid">
+                    Con esto estará listo lo necesario para integrar el grid que necesites
+                </p>
+
+            </div>
+            <div class="col-12 d-flex justify-right">
+                <button class="b-primary" id="btnIrDocumentacion">Ir a la documentación ➡</button>
+            </div>
+        </div>
     </div>
-    
-    <div class="container d-none" id="divDocumentacion">
+
+    <div class="container" id="divDocumentacion">
 
         <h1 class="title-grid">Easy Grid</h1>
-        <p class="subtitle-grid mb-2">Maqueta tus proyectos de manera fácil con easy grid.</p>
+        <p class="subtitle-grid mb-2">Maqueta tus proyectos de manera fácil con Easy Grid.</p>
 
 
         <!-- Forma 1 de construir el layout: especificar la medida del grid y las columnas-->
 
         <b class="subtitle-grid">😋 Layout por medidas del grid (16, 12, 10) y sus columnas</b>
+        <p class="subtitle-grid">La medida que se defina en el Grid permitirá el uso del total del contenedor, si el Grid esta definido en e-grid-12 y si hay mas de 12 columnas la siguiente se mostrará en la siguiente fila</p>
 
         <!-- Se debe generar un contenedor con la clase grid y especificar el sistema de columnas a trabajar: e-grid-16, e-grid-12, e-grid-10-->
         <div class="e-grid-12 mt-3 mb-3">
@@ -216,10 +143,70 @@
             </div>
         </div>
 
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid-12 mt-3 mb-3">
+
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col-1">
+        &lt;div class="demo-box bg-4">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
+
 
         <!-- Forma 2 de construir el layout: layout por tipo de dispositivo-->
 
         <b class="subtitle-grid">😮 Layout por tipo de dispositivo</b>
+        <p class="subtitle-grid">En este caso no es necesario especificar la cantidad de columnas</p>
+        <p class="subtitle-grid">Ni tampoo es necesario especificar el tamaño de la columna</p>
+        
+        <b>Ejemplo 1</b>
 
         <div class="e-grid mt-3">
             <!-- En este caso no es necesario especificar la cantidad de columnas-->
@@ -229,7 +216,18 @@
                 </div>
             </div>
         </div>
-
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid mt-3">
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
+        
+        <b>Ejemplo 2</b>
         <div class="e-grid desktop-3 tablet-2 mobile-1">
             <!-- al definir desktop 3 se divide en: 3 columnas -->
             <div class="col">
@@ -246,7 +244,28 @@
                 </div>
             </div>
         </div>
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid desktop-3 tablet-2 mobile-1">
+    &lt;!-- al definir desktop 3 se divide en: 3 columnas -->
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+            &lt;!-- No es necesario especificar la medida del col-->
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
 
+        <b>Ejemplo 3</b>
         <div class="e-grid desktop-4 tablet-3 mobile-2">
             <div class="col">
                 <div class="demo-box bg-primary align-center">
@@ -265,7 +284,30 @@
                 </div>
             </div>
         </div>
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid desktop-4 tablet-3 mobile-2">
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
 
+        <b>Ejemplo 4</b>
         <div class="e-grid desktop-6 tablet-4 mobile-2 mb-3">
             <div class="col">
                 <div class="demo-box bg-primary align-center">
@@ -292,6 +334,36 @@
                 </div>
             </div>
         </div>
+        <pre>
+            <code class="language-html">
+&lt;div class="e-grid desktop-6 tablet-4 mobile-2 mb-3">
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="col">
+        &lt;div class="demo-box bg-primary align-center">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code>
+        </pre>
 
 
 
@@ -520,38 +592,54 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
 
 
 
+<script src="./assets/prismjs/prism.js"></script>
+<script>
+    const lnkEasyGrid = document.querySelector("#lnkEasyGrid"),
+        lnkDocumentacion = document.querySelector("#lnkDocumentacion"),
+        divAcercaDe = document.querySelector("#divAcercaDe"),
+        divDocumentacion = document.querySelector("#divDocumentacion"),
+        btnGit = document.querySelector("#btnGit");
 
-    <script>
-        const lnkEasyGrid = document.querySelector("#lnkEasyGrid"),
-            lnkDocumentacion = document.querySelector("#lnkDocumentacion"),
-            divAcercaDe = document.querySelector("#divAcercaDe"),
-            divDocumentacion = document.querySelector("#divDocumentacion");
+    let configuration = {
+        'section': 1
+    };
 
-        let configuration = {
-            'section': 1
-        };
+    lnkEasyGrid.addEventListener("click", () => {
+        configuration.section = 1;
+        divAcercaDe.classList.remove('d-none');
+        divDocumentacion.classList.add('d-none');
+        lnkDocumentacion.classList.remove('active');
+        lnkEasyGrid.classList.add('active');
+    });
 
-        lnkEasyGrid.addEventListener("click", () => {
-            configuration.section = 1;
-            divAcercaDe.classList.remove('d-none');
-            divDocumentacion.classList.add('d-none');
+    lnkDocumentacion.addEventListener("click", () => {
+        configuration.section = 2;
+        divDocumentacion.classList.remove('d-none');
+        divAcercaDe.classList.add('d-none');
+        lnkDocumentacion.classList.add('active');
+        lnkEasyGrid.classList.remove('active');
+    });
 
-        });
+    btnIrDocumentacion.addEventListener("click", () => {
+        configuration.section = 2;
+        divDocumentacion.classList.remove('d-none');
+        divAcercaDe.classList.add('d-none');
+        lnkDocumentacion.classList.add('active');
+        lnkEasyGrid.classList.remove('active');
+    });
 
-        lnkDocumentacion.addEventListener("click", () => {
-            configuration.section = 2;
-            divDocumentacion.classList.remove('d-none');
-            divAcercaDe.classList.add('d-none');
+    btnGit.addEventListener("click", () => {
+        window.location.href = "https://github.com/JoseHS06/easy-grid.git";
+    });
 
-        });
-    </script>
+    addEventListener('load', function (event) {
+        PR.prettyPrint();
+    }, false);
+</script>
 
 
 
