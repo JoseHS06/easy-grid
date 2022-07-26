@@ -42,14 +42,24 @@
                       </div>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="collapse" href="#menu-3" role="button" aria-expanded="false" aria-controls="menu-3">Componentes</a>
-                      <div class="collapse" id="menu-3" data-parent="#page-nav">
+                      <a class="nav-link" data-toggle="collapse" href="#menu-2" role="button" aria-expanded="false" aria-controls="menu-2">Componentes</a>
+                      <div class="collapse" id="menu-2" data-parent="#page-nav">
                         <div>
                           <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link" href="components/layout.html">Layout</a>
+                                <a class="nav-link" href="./components/breakpoints.html">Breakpoints</a>
                             </li>
-                          </ul>
+                        </ul>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./components/container.html">Containers</a>
+                            </li>
+                        </ul>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./components/grid.html">Grid</a>
+                            </li>
+                        </ul>
                         </div>
                       </div>
                     </li>
@@ -77,8 +87,10 @@
                       </nav>
                     </div>
                     <div class="col text-right">
-                      <a href="index.html" class="btn btn-sm btn-outline-purple btn-rounded"><span class="fs-20 fab fa-github"></span> Ver en GitHub</a>
-                    </div>
+                      <a href="https://github.com/JoseHS06/easy-grid" target=""
+                          class="btn btn-sm btn-outline-purple btn-rounded"><span
+                              class="fs-20 fab fa-github"></span> Ver en GitHub</a>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -96,6 +108,49 @@
                   <p>Easy Grid es una hoja de estilos que te permitira incluir maquetado responsivo
                     para tus propios diseños de estilo.</p>
                 </section>
+
+                <section id="section-2">
+                  <h2 class="section-title-2">Quick start</h2>
+                  <p class="subtitle-grid mb-2">Crea un nuevo archivo index.html en tu proyecto y agrega la referencia de esta
+                      libreria CSS</p>
+                  <div class="e-grid-12 mt-3 mb-3">
+                      <div class="c-12">
+                          <pre>
+                                  <code class="language-html">
+&lt;link rel="stylesheet" href="./assets/css/easy-grid.css"&gt;
+                                  </code>
+                              </pre>
+                          <b class="subtitle-grid">
+                              * Verifica la ruta en tu proyecto que acceda a la hoja de estilos
+                          </b>
+                          <p class="subtitle-grid">
+                              Incluye el cuerpo HTML
+          
+                          </p>
+                          <p class="subtitle-grid">Dentro del body coloca el contenedor que hará posible el manejo del grid</p>
+                          <pre>
+                               <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+    &lt;!-- Contenido -->
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                              </code>
+                          </pre>
+                          <p class="subtitle-grid">
+                              Con esto estará listo lo necesario para integrar el grid que necesites
+                          </p>
+          
+                </section>
                 <!-- / ¿Que es? -->
 
               </article>
@@ -106,6 +161,9 @@
                   <ul id="toc" class="nav flex-column toc">
                     <li class="nav-item">
                       <a data-scroll class="nav-link" href="#section-1">¿Qué es Easy Grid?</a>
+                    </li>
+                    <li class="nav-item">
+                      <a data-scroll class="nav-link" href="#section-2">Quick start</a>
                     </li>
                   </ul>
                 </div>
@@ -125,23 +183,27 @@
     <!-- footer -->
     <footer class="bg-dark">
       <div class="container">
-        <div class="row gutter-3">
-          <div class="col-12 col-md-2">
-            <a href="index.html"><img src="./assets/template/images/puzzle.png" height="80px" alt="Logo"></a>
-          </div>
-          <div class="col-12 col-md-6 text-white">
-            <p class="mb-4">Maquetado facíl para tus diseños propios</p>
-            <div class="row">
-                <div class="col">
-                  <ul class="list-group list-group-minimal">
-                    <li class="list-group-item fs-40"><a href="https://github.com/JoseHS06/easy-grid.git" target="_blank" class="link"><i class="fs-50 fab fa-github"></i>  Github</a></li>
-                  </ul>
-                </div>
+          <div class="row gutter-3">
+              <div class="col-12 col-md-2">
+                  <a href="index.html"><img src="./../assets/template/images/puzzle.png" height="80px" alt="Logo"></a>
+              </div>
+              <div class="col-12 col-md-6 text-white">
+                  <p class="mb-4">Maquetado facíl para tus diseños propios</p>
+                  <div class="row">
+                      <div class="col">
+                          <ul class="list-group list-group-minimal">
+                              <li class="list-group-item fs-40"><a href="https://github.com/JoseHS06/easy-grid.git"
+                                      target="_blank" class="link"><i class="fs-50 fab fa-github"></i> Github</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 d-flex justify-content-end">
+                  Copyright (c) 2022  &nbsp;<a class="text-green" href="https://github.com/JoseHS06/"" target="_blank"> JoseHS06&nbsp;</a> 👽
               </div>
           </div>
-        </div>
       </div>
-    </footer>
+  </footer>
     <!-- / footer -->
 
 
